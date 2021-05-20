@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Alert, Modal, StyleSheet, Text, Pressable, View, TextInput, Image} from "react-native";
+import { Button, Alert, Modal, StyleSheet, Text, Pressable, SafeAreaView, TextInput, Image, View, ScrollView} from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
@@ -8,10 +8,167 @@ export default function tasksScreen() {
     const [date, setDate] = useState(new Date());
     return(
         <>
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Tasks Screen (still under development)</Text>
-            <Button title="Create new task" onPress={() => setModalVisible(true)}/>
-        </View> 
+        {/* <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}> */}
+        <SafeAreaView>
+            {/* <Text>Tasks Screen (still under development)</Text> */}
+            <View style={styles.pageLayout}>
+                <View style={styles.pageHeader}>
+                    <Text style={styles.headerText}>Tasks</Text>
+                    <Button title="Create new task" onPress={() => setModalVisible(true)}/>
+                </View>
+                <ScrollView style={{paddingBottom: 10}}>
+                    
+                    {/* ---------------------------------------------------------------------------------- */}
+                    <View style={[styles.taskLayout, styles.shadow]}>
+                        <View style={styles.taskInfo}>
+                            <View><Text style={styles.tasksTitle}>TASK 1</Text></View>
+                            <View><Text style={styles.tasksDayCount}>3</Text><Text>Days</Text></View>
+                        </View>
+                        <View style={styles.taskGraph}>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                            <View style={styles.MemPicContainer}>
+                                    <Text style={{paddingBottom: 3}}>Mon 3/27</Text>
+                                    <Image style={styles.MemPic} source={{ 
+                                            width: 30,
+                                            height: 30,
+                                            uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    <Text style={{paddingTop: 3}}>Rohan</Text>
+                                </View>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                            <View style={styles.MemPicContainer}>
+                                    <Text style={{paddingBottom: 3}}>Wed 3/29</Text>
+                                    <Image style={styles.MemPic} source={{ 
+                                            width: 30,
+                                            height: 30,
+                                            uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    <Text style={{paddingTop: 3}}>Mick</Text>
+                                </View>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                            <View style={styles.MemPicContainer}>
+                                    <Text style={{paddingBottom: 3}}>Sat 4/1</Text>
+                                    <Image style={styles.MemPic} source={{ 
+                                            width: 30,
+                                            height: 30,
+                                            uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    <Text style={{paddingTop: 3}}>Vic</Text>
+                                </View>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                        </View>
+                    </View>
+                    {/* ---------------------------------------------------------------------------------- */}
+                    <View style={[styles.taskLayout, styles.shadow]}>
+                        <View style={styles.taskInfo}>
+                            <View><Text style={styles.tasksTitle}>TASK 2</Text></View>
+                            <View><Text style={styles.tasksDayCount}>3</Text><Text>Days</Text></View>
+                        </View>
+                        <View style={styles.taskGraph}>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                            <View style={styles.MemPicContainer}>
+                                    <Text style={{paddingBottom: 3}}>Mon 3/27</Text>
+                                    <Image style={styles.MemPic} source={{ 
+                                            width: 30,
+                                            height: 30,
+                                            uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    <Text style={{paddingTop: 3}}>Rohan</Text>
+                                </View>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                            <View style={styles.MemPicContainer}>
+                                    <Text style={{paddingBottom: 3}}>Wed 3/29</Text>
+                                    <Image style={styles.MemPic} source={{ 
+                                            width: 30,
+                                            height: 30,
+                                            uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    <Text style={{paddingTop: 3}}>Mick</Text>
+                                </View>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                            <View style={styles.MemPicContainer}>
+                                    <Text style={{paddingBottom: 3}}>Sat 4/1</Text>
+                                    <Image style={styles.MemPic} source={{ 
+                                            width: 30,
+                                            height: 30,
+                                            uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    <Text style={{paddingTop: 3}}>Vic</Text>
+                                </View>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                        </View>
+                    </View>
+                    {/* ---------------------------------------------------------------------------------- */}
+                    <View style={[styles.taskLayout, styles.shadow]}>
+                        <View style={styles.taskInfo}>
+                            <View><Text style={styles.tasksTitle}>TASK 3</Text></View>
+                            <View><Text style={styles.tasksDayCount}>3</Text><Text>Days</Text></View>
+                        </View>
+                        <View style={styles.taskGraph}>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                            <View style={styles.MemPicContainer}>
+                                    <Text style={{paddingBottom: 3}}>Mon 3/27</Text>
+                                    <Image style={styles.MemPic} source={{ 
+                                            width: 30,
+                                            height: 30,
+                                            uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    <Text style={{paddingTop: 3}}>Rohan</Text>
+                                </View>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                            <View style={styles.MemPicContainer}>
+                                    <Text style={{paddingBottom: 3}}>Wed 3/29</Text>
+                                    <Image style={styles.MemPic} source={{ 
+                                            width: 30,
+                                            height: 30,
+                                            uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    <Text style={{paddingTop: 3}}>Mick</Text>
+                                </View>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                            <View style={styles.MemPicContainer}>
+                                    <Text style={{paddingBottom: 3}}>Sat 4/1</Text>
+                                    <Image style={styles.MemPic} source={{ 
+                                            width: 30,
+                                            height: 30,
+                                            uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    <Text style={{paddingTop: 3}}>Vic</Text>
+                                </View>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                        </View>
+                    </View>
+                    {/* ---------------------------------------------------------------------------------- */}
+                    <View style={[styles.taskLayout, styles.shadow]}>
+                        <View style={styles.taskInfo}>
+                            <View><Text style={styles.tasksTitle}>TASK 1</Text></View>
+                            <View><Text style={styles.tasksDayCount}>3</Text><Text>Days</Text></View>
+                        </View>
+                        <View style={styles.taskGraph}>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                            <View style={styles.MemPicContainer}>
+                                    <Text style={{paddingBottom: 3}}>Mon 3/27</Text>
+                                    <Image style={styles.MemPic} source={{ 
+                                            width: 30,
+                                            height: 30,
+                                            uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    <Text style={{paddingTop: 3}}>Rohan</Text>
+                                </View>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                            <View style={styles.MemPicContainer}>
+                                    <Text style={{paddingBottom: 3}}>Wed 3/29</Text>
+                                    <Image style={styles.MemPic} source={{ 
+                                            width: 30,
+                                            height: 30,
+                                            uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    <Text style={{paddingTop: 3}}>Mick</Text>
+                                </View>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                            <View style={styles.MemPicContainer}>
+                                    <Text style={{paddingBottom: 3}}>Sat 4/1</Text>
+                                    <Image style={styles.MemPic} source={{ 
+                                            width: 30,
+                                            height: 30,
+                                            uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    <Text style={{paddingTop: 3}}>Vic</Text>
+                                </View>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                        </View>
+                    </View>
+                </ScrollView>
+            </View>
+        </SafeAreaView> 
         <View>
             <Modal
                 animationType="slide"
@@ -82,12 +239,12 @@ const styles = StyleSheet.create({
       },
       shadowOpacity: 0.25,
       shadowRadius: 4,
-      elevation: 5
+      elevation: 5,
     },
     button: {
       borderRadius: 20,
       padding: 10,
-      elevation: 2
+      elevation: 2,
     },
     buttonOpen: {
       backgroundColor: "#F194FF",
@@ -130,7 +287,10 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },  
     MemPicContainer: {
-        padding: 8
+        padding: 8,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     MemPic: {
         width: 30,
@@ -138,4 +298,46 @@ const styles = StyleSheet.create({
         borderRadius: 30 / 2,
         overflow: "hidden",
     },
+    pageHeader: {
+        padding: 10,
+    },
+    headerText: {
+        fontSize: 45
+    },
+    taskLayout:{
+        padding: 15,
+        backgroundColor: "#fff",
+        borderRadius: 20,
+        marginLeft: 10,
+        marginRight: 10,
+        marginTop: 10,
+        shadowColor: "#000"
+    },
+    taskInfo:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        padding: 10,
+    },
+    tasksTitle: {
+        fontSize: 30
+    },
+    tasksDayCount: {
+        fontSize: 30
+    },
+    taskGraph: {
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    shadow: {
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowRadius: 4,
+        shadowOpacity: 0.25,
+        elevation: 5,
+        shadowColor: "#000",
+        elevation: 5,
+    }
   });
