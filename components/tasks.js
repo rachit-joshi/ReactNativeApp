@@ -9,15 +9,14 @@ export default function tasksScreen() {
     return(
         <>
         {/* <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}> */}
-        <SafeAreaView>
+        <SafeAreaView style={{flex: 1}}>
             {/* <Text>Tasks Screen (still under development)</Text> */}
             <View style={styles.pageLayout}>
                 <View style={styles.pageHeader}>
                     <Text style={styles.headerText}>Tasks</Text>
                     <Button title="Create new task" onPress={() => setModalVisible(true)}/>
                 </View>
-                <ScrollView style={{paddingBottom: 10}}>
-                    
+                <ScrollView>
                     {/* ---------------------------------------------------------------------------------- */}
                     <View style={[styles.taskLayout, styles.shadow]}>
                         <View style={styles.taskInfo}>
@@ -166,6 +165,44 @@ export default function tasksScreen() {
                             <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
                         </View>
                     </View>
+                    {/* ---------------------------------------------------------------------------------- */}
+                    <View style={[styles.taskLayout, styles.shadow]}>
+                        <View style={styles.taskInfo}>
+                            <View><Text style={styles.tasksTitle}>TASK 3</Text></View>
+                            <View><Text style={styles.tasksDayCount}>3</Text><Text>Days</Text></View>
+                        </View>
+                        <View style={styles.taskGraph}>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                            <View style={styles.MemPicContainer}>
+                                    <Text style={{paddingBottom: 3}}>Mon 3/27</Text>
+                                    <Image style={styles.MemPic} source={{ 
+                                            width: 30,
+                                            height: 30,
+                                            uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    <Text style={{paddingTop: 3}}>Rohan</Text>
+                                </View>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                            <View style={styles.MemPicContainer}>
+                                    <Text style={{paddingBottom: 3}}>Wed 3/29</Text>
+                                    <Image style={styles.MemPic} source={{ 
+                                            width: 30,
+                                            height: 30,
+                                            uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    <Text style={{paddingTop: 3}}>Mick</Text>
+                                </View>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                            <View style={styles.MemPicContainer}>
+                                    <Text style={{paddingBottom: 3}}>Sat 4/1</Text>
+                                    <Image style={styles.MemPic} source={{ 
+                                            width: 30,
+                                            height: 30,
+                                            uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    <Text style={{paddingTop: 3}}>Vic</Text>
+                                </View>
+                            <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
+                        </View>
+                    </View>
+                    {/* ---------------------------------------------------------------------------------- */}
                 </ScrollView>
             </View>
         </SafeAreaView> 
@@ -303,6 +340,9 @@ const styles = StyleSheet.create({
     },
     headerText: {
         fontSize: 45
+    },
+    pageLayout:{
+        flex: 1
     },
     taskLayout:{
         padding: 15,
