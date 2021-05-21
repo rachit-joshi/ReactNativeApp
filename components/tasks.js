@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Button, Alert, Modal, StyleSheet, Text, Pressable, SafeAreaView, TextInput, Image, View, ScrollView, TouchableNativeFeedback} from "react-native";
+import { Button, Alert, Modal, StyleSheet, Text, Pressable, SafeAreaView, TextInput, Image, View, ScrollView, TouchableNativeFeedback, TouchableNativeFeedbackComponent} from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 export default function tasksScreen() {
     const [modalVisible, setModalVisible] = useState(false);
-    //const [dmodalVisible, setDmodalVisible] = useState(false);
+    const [dmodalVisible, setDmodalVisible] = useState(false);
     return(
         <>
         {/* <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}> */}
@@ -20,7 +20,7 @@ export default function tasksScreen() {
                     {/* ---------------------------------------------------------------------------------- */}
                     <View style={[styles.taskLayout, styles.shadow]}>
                         <View style={styles.taskInfo}>
-                            <View><Text style={styles.tasksTitle}>TASK 1</Text></View>
+                            <TouchableNativeFeedback onPress={() => setDmodalVisible(true)}><Text style={styles.tasksTitle}>TASK 1</Text></TouchableNativeFeedback>
                             <View><Text style={styles.tasksDayCount}>3</Text><Text>Days</Text></View>
                         </View>
                         <View style={styles.taskGraph}>
@@ -57,7 +57,7 @@ export default function tasksScreen() {
                     {/* ---------------------------------------------------------------------------------- */}
                     <View style={[styles.taskLayout, styles.shadow]}>
                         <View style={styles.taskInfo}>
-                            <View><Text style={styles.tasksTitle}>TASK 2</Text></View>
+                        <TouchableNativeFeedback onPress={() => setDmodalVisible(true)}><Text style={styles.tasksTitle}>TASK 2</Text></TouchableNativeFeedback>
                             <View><Text style={styles.tasksDayCount}>5</Text><Text>Days</Text></View>
                         </View>
                         <View style={styles.taskGraph}>
@@ -86,7 +86,7 @@ export default function tasksScreen() {
                     {/* ---------------------------------------------------------------------------------- */}
                     <View style={[styles.taskLayout, styles.shadow]}>
                         <View style={styles.taskInfo}>
-                            <View><Text style={styles.tasksTitle}>TASK 3</Text></View>
+                        <TouchableNativeFeedback onPress={() => setDmodalVisible(true)}><Text style={styles.tasksTitle}>TASK 3</Text></TouchableNativeFeedback>
                             <View><Text style={styles.tasksDayCount}>1</Text><Text>Days</Text></View>
                         </View>
                         <View style={styles.taskGraph}>
@@ -123,7 +123,7 @@ export default function tasksScreen() {
                     {/* ---------------------------------------------------------------------------------- */}
                     <View style={[styles.taskLayout, styles.shadow]}>
                         <View style={styles.taskInfo}>
-                            <View><Text style={styles.tasksTitle}>TASK 4</Text></View>
+                        <TouchableNativeFeedback onPress={() => setDmodalVisible(true)}><Text style={styles.tasksTitle}>TASK 4</Text></TouchableNativeFeedback>
                             <View><Text style={styles.tasksDayCount}>6</Text><Text>Days</Text></View>
                         </View>
                         <View style={styles.taskGraph}>
@@ -142,7 +142,7 @@ export default function tasksScreen() {
                     {/* ---------------------------------------------------------------------------------- */}
                     <View style={[styles.taskLayout, styles.shadow]}>
                         <View style={styles.taskInfo}>
-                            <View><Text style={styles.tasksTitle}>TASK 5</Text></View>
+                        <TouchableNativeFeedback onPress={() => setDmodalVisible(true)}><Text style={styles.tasksTitle}>TASK 5</Text></TouchableNativeFeedback>
                             <View><Text style={styles.tasksDayCount}>3</Text><Text>Days</Text></View>
                         </View>
                         <View style={styles.taskGraph}>
@@ -224,6 +224,32 @@ export default function tasksScreen() {
                     <Pressable
                     style={[styles.button, styles.buttonClose]}
                     onPress={() => setModalVisible(!modalVisible)}
+                    >
+                    <Text style={styles.textStyle}>DONE</Text>
+                    </Pressable>
+                </View>
+            
+            </Modal> 
+        </View>
+
+
+
+        <View>
+            <Modal
+                animationType="slide"
+                visible={dmodalVisible}
+                onRequestClose={() => {
+                Alert.alert("Modal has been closed.");
+                setDmodalVisible(!dmodalVisible);
+                }}>
+                <View style={styles.modalView}>
+                    <Text style={styles.modalTitle} >Task Details</Text>
+                    <View style={styles.modalForm}>
+                        
+                    </View>
+                    <Pressable
+                    style={[styles.button, styles.buttonClose]}
+                    onPress={() => setDmodalVisible(!dmodalVisible)}
                     >
                     <Text style={styles.textStyle}>DONE</Text>
                     </Pressable>
