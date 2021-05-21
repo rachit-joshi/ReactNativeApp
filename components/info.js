@@ -13,6 +13,12 @@ export default function infoScreen() {
                                             ]);
 
     React.useEffect(() => {},[members]);
+
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min) + min); 
+      }
     
     return(
         <SafeAreaView>
@@ -33,7 +39,7 @@ export default function infoScreen() {
                             <Image style={styles.MemPic} source={{ 
                                     width: 30,
                                     height: 30,
-                                    uri: "https://picsum.photos/30/30?random=1"}}/>
+                                    uri: "https://picsum.photos/30/30?random="+ getRandomInt(1,10).toString()}}/>
                         </View>
                         <View  style={styles.MemName}>
                             <Text>{x.name}</Text>

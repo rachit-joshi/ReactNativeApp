@@ -7,8 +7,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 export default function alertScreen() {
 
     const rightButtons = [
-        <TouchableHighlight><Icon name="trash" size={28} color="#900"/></TouchableHighlight>,
-        <TouchableHighlight><Icon name="history" size={28} color="blue"/></TouchableHighlight>
+        <TouchableHighlight style={{paddingLeft: 25, backgroundColor: "#FF5733", height: 50, paddingTop: 10}}><Icon  name="trash" size={28} color="white"/></TouchableHighlight>,
+        <TouchableHighlight style={{paddingLeft: 25, backgroundColor: "#691BE5", height: 50, paddingTop: 10}}><Icon name="history" size={28} color="white"/></TouchableHighlight>
     ];
 
     return(
@@ -22,12 +22,12 @@ export default function alertScreen() {
             </View>
             <View style={styles.alertsBox}>
                 <Swipeable rightButtons={rightButtons}>
-                    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</Text>
+                    <Text >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</Text>
                 </Swipeable>
             </View>
             <View style={styles.alertsBox}>
                 <Swipeable rightButtons={rightButtons}>
-                    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
+                    <Text style={{height: 50}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
                 </Swipeable>
             </View>
             <View style={styles.alertsBox}>
@@ -51,7 +51,7 @@ export default function alertScreen() {
             </View>
             <View style={styles.alertsBox}>
                 <Swipeable rightButtons={rightButtons}>
-                    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
+                    <Text style={{height: 50}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
                 </Swipeable>
             </View>
             <View style={styles.alertsBox}>
@@ -84,7 +84,8 @@ const styles = StyleSheet.create({
     },
     alertsBox: {
         paddingLeft: 8,
-        paddingTop: 8,
-        paddingBottom: 8
+        paddingTop: 10,
+        paddingBottom: 8,
+        //height: 50,
     }
   })
